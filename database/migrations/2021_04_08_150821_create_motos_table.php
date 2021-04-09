@@ -16,7 +16,7 @@ class CreateMotosTable extends Migration
         Schema::create('motos', function (Blueprint $table) {
             $table->id();
             $table->string('marca');
-            $table->string('modelo');
+            $table->integer('modelo');
             $table->string('color');
             $table->timestamps();
         });
