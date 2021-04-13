@@ -15,6 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(AutoSeeder::class);
-        \App\Models\Moto::factory(10)->create();
+        \App\Models\Moto::factory(99)->create();
     }
 }
