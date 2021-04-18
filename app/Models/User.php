@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Profile;
+use App\Models\Pedido;
 
 class User extends Authenticatable
 {
@@ -42,7 +43,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    //Relacion de UNO a UNO
     public function profile(){
-        return $this->hasOne(Profile::class);
+        return $this->hasOne('App\Models\Profile');
+    }
+
+    //Relacion de UNO a MUCHOS
+    public function pedidos()
+    {
+        return $this->hasMany('App\Models\Pedido');
+    }
+
+    //Relacion de MUCHOS a MUCHOS
+    public function grupos(){
+        return $this->belongsToMany('App\Models\Grupo');
     }
 }

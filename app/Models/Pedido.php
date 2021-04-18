@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 
-class Profile extends Model
+class Pedido extends Model
 {
     use HasFactory;
 
-    //Relacion UNO a UNO (INVERSA)
+    //Relacion UNO a MUCHOS (INVERSA)
     public function user(){
         return $this->belongsTo('App\Models\User');
     }
