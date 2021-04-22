@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/holamundo', function () {
+    return 'Bienvenido a mi pagina, usted ingresó desde la ruta -holamundo-';
+});
+
+Route::get('/saludo/{nombre}/{apellido}', function ($nombre, $apellido) {
+    return 'Hola ' . $nombre . ' ' . $apellido;
+});
+
+Route::get('pruebacontrolador', [HomeController::class, 'pruebacontrolador']);
+Route::get('vistaprueba', [HomeController::class, 'vistaprueba']);
