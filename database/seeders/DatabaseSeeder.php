@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Auto;
+use App\Models\Moto;
+use App\Models\User;
+use App\Models\Item;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AutoSeeder::class);
         \App\Models\Moto::factory(99)->create();
         \App\Models\User::factory(99)->create();
+        \App\Models\Item::factory(50)->create();
     }
 }

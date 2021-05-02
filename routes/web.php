@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,7 @@ Route::get('/', function () {
 });
 
 
+/* 
 Route::get('/holamundo', function () {
     return 'Bienvenido a mi pagina, usted ingresó desde la ruta -holamundo-';
 });
@@ -28,4 +30,11 @@ Route::get('/saludo/{nombre}/{apellido}', function ($nombre, $apellido) {
 });
 
 Route::get('pruebacontrolador', [HomeController::class, 'pruebacontrolador']);
-Route::get('vistaprueba', [HomeController::class, 'vistaprueba']);
+Route::get('vistaprueba', [HomeController::class, 'vistaprueba']); */
+
+/* Route::get('/item', function () {
+    return view('item.index');
+});
+
+Route::get('/item/create', [ItemController::class,'create']); */
+Route::resource('items', 'App\Http\Controllers\ItemController');
