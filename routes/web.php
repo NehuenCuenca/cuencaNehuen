@@ -38,3 +38,11 @@ Route::get('vistaprueba', [HomeController::class, 'vistaprueba']); */
 
 Route::get('/item/create', [ItemController::class,'create']); */
 Route::resource('items', 'App\Http\Controllers\ItemController');
+
+Route::get('/pruebaM', function () {
+    return 'Usted accedio correctamente a la ruta';
+})->middleware('edad');
+
+Route::get('/no-autorizado', function () {
+    return 'Usted no es mayor de edad(min. edad: 18)';
+});
